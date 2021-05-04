@@ -1,16 +1,15 @@
-package com.celestechicken.appweb.model;
-
-
+package com.celestechicken.appweb.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
+
 @Controller
 public class UsuarioController {
-    private static final String Index="usuario/index";
-@getMapping("/usuario/index")
-public String index(Model MODEL);{
+    private static final String Index="usuario/login";
+
+@getMapping("/usuario/login")
+public String login(Model MODEL){
 return INDEX;
-}}
+}
+}

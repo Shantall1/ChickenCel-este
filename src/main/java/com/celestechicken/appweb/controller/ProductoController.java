@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class ProductoController {
     private static final String Index="producto/index";
 @getMapping("/producto/index")
-public String index(Model MODEL);{
+public String index(Model MODEL){
 return INDEX;
 }
 }
