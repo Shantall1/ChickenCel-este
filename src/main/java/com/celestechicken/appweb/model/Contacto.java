@@ -1,4 +1,5 @@
 package com.celestechicken.appweb.model;
+import javax.persistence.Entity;
 import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.NotNull;
