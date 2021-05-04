@@ -16,19 +16,14 @@ import lombok.*;
 @AllArgsCocstructor
 @Builder
 @Entity
-@Table(name="t_contacto")
-
-public class Contacto{   
+@Table(name="t_cliente")
+public class cliente{  
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private long id;
     @NotNull
-    private String name;
+    private String firsName;
     @NotNull
-    private String email;
-    @NotNull
-    private String phone; 
-    @NotNull
-    private String reason; 
+    private String lastName;
 
 }

@@ -16,19 +16,13 @@ import lombok.*;
 @AllArgsCocstructor
 @Builder
 @Entity
-@Table(name="t_contacto")
-
-public class Contacto{   
+@Table(name="t_producto")
+public class producto{  
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private long id;
     @NotNull
-    private String name;
+    private String descripcion;
     @NotNull
-    private String email;
-    @NotNull
-    private String phone; 
-    @NotNull
-    private String reason; 
-
-}
+    private BigDecialmal precio;
+ }
