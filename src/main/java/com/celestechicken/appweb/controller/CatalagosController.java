@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 public class CatalagosController {
 
 private static final String Index="catalogo/index";
-@getMapping("/catalogo/index")
+@GetMapping("/catalogo/index")
 public String index(Model MODEL){
 return INDEX;
 }

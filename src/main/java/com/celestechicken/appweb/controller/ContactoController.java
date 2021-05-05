@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 public class ContactoController {
 
     private static final String Index="contacto/create";
-    @getMapping("/contacto/create")
+    @GetMapping("/contacto/create")
     public String index(Model MODEL){
     return INDEX;
     }

@@ -12,9 +12,9 @@ import javax.persistence.GenerationType;
 import lombok.*;
 
 @Getter
-@setter
+@Setter
 @NoArgsConstructor
-@AllArgsCocstructor
+@AllArgsConstructor
 @Builder
 @Entity
 @Table(name="t_contacto")

@@ -10,7 +10,7 @@ public class ClienteController {
 
 private static final String Index ="cliente/index";
 
-@getMapping("/cliente/index")
+@GetMapping("/cliente/index")
 public String index(Model MODEL){
 return INDEX;
 }

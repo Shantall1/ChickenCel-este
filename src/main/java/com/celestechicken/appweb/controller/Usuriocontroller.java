@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 
 @Controller
-public class UsuarioController {
+public class usuariocontroller {
     private static final String Index="usuario/login";
 
-@getMapping("/usuario/login")
+    @GetMapping("/usuario/login")
 public String login(Model MODEL){
 return INDEX;
 }

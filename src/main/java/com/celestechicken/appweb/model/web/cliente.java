@@ -2,18 +2,22 @@ package com.celestechicken.appweb.model;
 import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.NotNull;
+
+import com.celestechicken.appweb.model.usuario;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Table;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import lombok.*;
 
 @Getter
-@setter
+@Setter
 @NoArgsConstructor
-@AllArgsCocstructor
+@AllArgsConstructor
 @Builder
 @Entity
 @Table(name="t_cliente")
@@ -32,8 +36,8 @@ public class cliente{
     private String gender; //Radio
     private String maritalStatus; //List Box
     private Integer childrens; //Numero
-    @oneToONEprivate Usuario (fetch=FetchType.LAZY)
+    @oneToONEprivate     usuarioh=FetchType.LAZY)
     @JoinColumn(name="user_id")
-    private Usuerio user;
+    private usuario user;
 
 }
