@@ -1,13 +1,12 @@
 package com.celestechicken.appweb.repository;
+import com.celestechicken.appweb.model.Usuario;
+
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.celestechicken.appweb.model.usuario;
+@Repository
+public interface  UsuarioRepository extends JpaRepository<Usuario, String>{
 
-
-
-
- @Repository
-public interface UsuarioRepository estends JpaRepository <usuario,Integer>{   
-
+    
 }
+© 2021 GitHub, Inc.

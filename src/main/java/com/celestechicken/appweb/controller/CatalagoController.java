@@ -5,11 +5,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 
 @Controller
-public class usuariocontroller {
-    private static final String Index="usuario/login";
+public class CatalogoController{
 
-    @GetMapping("/usuario/login")
-public String login(Model MODEL){
-return INDEX;
-}
+    private static final String INDEX ="catalogo/index"; 
+
+    @GetMapping("/catalogo/index")
+    public String index(Model model) {
+        return INDEX;
+    }    
+
+
+    
 }

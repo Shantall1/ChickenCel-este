@@ -1,13 +1,11 @@
 package com.celestechicken.appweb.repository;
+import com.celestechicken.appweb.model.Cliente;
+
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.celestechicken.appweb.model.cliente;
+@Repository
+public interface  ClienteRepository extends JpaRepository<Cliente, Integer>{
 
-
-
-
- @Repository
-public interface ClienteRepository estends JpaRepository <cliente,Integer>{   
-
+    
 }

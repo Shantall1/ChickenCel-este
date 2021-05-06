@@ -1,7 +1,4 @@
-package com.celestechicken.appweb.model;
-import javax.persistence.Entity;
-import java.util.Date;
-import org.springframework.format.annotation.DateTimeFormat;
+package com.celestechicken.appweb.model.web;
 import javax.validation.constraints.NotNull;
 
 import javax.persistence.Entity;
@@ -9,6 +6,7 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
 import lombok.*;
 
 @Getter
@@ -17,9 +15,9 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name="t_contacto")
+@Table(name = "t_contact")
+public class Contacto{
 
-public class Contacto{   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -31,5 +29,5 @@ public class Contacto{
     private String phone; 
     @NotNull
     private String reason; 
-
+  
 }
