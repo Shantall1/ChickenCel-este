@@ -1,4 +1,4 @@
-package com.celestechicken.appweb.model;
+package com.celestechicken.appweb.model.web;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;

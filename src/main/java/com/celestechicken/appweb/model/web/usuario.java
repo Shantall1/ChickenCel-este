@@ -1,4 +1,4 @@
-package com.celestechicken.appweb.model;
+package com.celestechicken.appweb.model.web;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

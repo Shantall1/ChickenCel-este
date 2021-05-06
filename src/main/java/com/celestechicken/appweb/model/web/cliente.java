@@ -1,4 +1,4 @@
-package com.celestechicken.appweb.model;
+package com.celestechicken.appweb.model.web;
 import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 

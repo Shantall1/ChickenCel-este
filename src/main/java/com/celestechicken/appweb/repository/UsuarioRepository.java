@@ -9,4 +9,3 @@ public interface  UsuarioRepository extends JpaRepository<Usuario, String>{
 
     
 }
-© 2021 GitHub, Inc.
