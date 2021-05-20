@@ -23,8 +23,7 @@ public class ClienteController {
     private final UsuarioRepository usuariosData;
 
 public ClienteController(ClienteRepository clientsData,
-    UsuarioRepository usuariosData    
-    ){
+    UsuarioRepository usuariosData        ){
     this.clientsData = clientsData;
     this.usuariosData = usuariosData;
 }          

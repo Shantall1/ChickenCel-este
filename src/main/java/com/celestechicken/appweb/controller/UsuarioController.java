@@ -31,9 +31,11 @@ public class UsuarioController {
         return INDEX;
     }  
 
-@PostMapping("/usuario/login")
+    @PostMapping("/usuario/login")
     public String loginSubmitForm(Model model, 
-         @Valid Usuario objUser, BindingResult result ){
+         @Valid Usuario objUser, 
+         HttpServletRequest request,
+         BindingResult result ){
         String page=INDEX;
         model.addAttribute(MODEL_CONTACT, new Usuario());
         if(result.hasFieldErrors()) {
@@ -44,6 +46,7 @@ public class UsuarioController {
                 if(userDB.get().getPassword().equals(objUser.getPassword())){
                     model.addAttribute(MODEL_CONTACT,userDB.get());
                     model.addAttribute(MODEL_MESSAGE, "Usuario existe");
+                    request.getSession().setAttribute("user", objUser);
                     page="welcome";  
                 }else{
                     model.addAttribute(MODEL_MESSAGE, "Password no coincide");  
@@ -54,4 +57,10 @@ public class UsuarioController {
         }
         return page;
     }
+    
+    @GetMapping("/usuario/logout")
+	public String logoutSession(HttpServletRequest request) {
+		request.getSession().invalidate();
+		return "redirect:/";
+	}
 }

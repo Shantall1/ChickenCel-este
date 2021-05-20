@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html xmlns:th="https://www.thymeleaf.org" 
-    th:replace="~{fragments/layout :: layout (~{::body},'producto')}">
+    th:replace="~{fragments/layout :: layout (~{::body},'proforma')}">
 
 <head>
   <title>Producto</title>
@@ -13,30 +13,34 @@
 </head>
 
 <body>
-
+ 
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mt-5 mb-5">
-        <h2>Productos</h2><br/>
-        <a href="/producto/create">Create</a>
+        <h2>Carrito</h2><br/>
         <table id="example" class="table table-bordered table-responsive" style="width: 100%">
           <thead>
             <tr>
-              <th>#</th>
+              <th>Id</th>
               <th>Descripcion</th>
               <th>Precio</th>
-              <th>Image</th>
+              <th>Cantidad</th>
+              <th>#</th>
             </tr>
           </thead>
           <tbody>
-            <tr th:each="producto : ${productos}">
+            <tr th:each="proforma : ${proformas}">
+              <td th:text="${proforma.product.id}"></td>
+              <td th:text="${proforma.product.descripcion}"></td>
+              <td th:text="${proforma.precio}"></td>
               <td>
-                <a th:href="@{'/producto/edit/__${producto.id}__'}"
-  			           class="btn btn-info" role="button">Edit</a>
+                <input type="number" class="form-control" id="cantidad" 
+                  autocomplete="off" th:value="${proforma.cantidad}"
+                  min="1" max="100"/>
               </td>
-              <td th:text="${producto.descripcion}"></td>
-              <td th:text="${producto.precio}"></td>
-              <td th:text="${producto.imageFileName}"></td>
+              <td>
+                <a href="#" class="btn btn-primary">Update</a>
+              </td>              
             </tr>
           </tbody>
         </table>
