@@ -1,4 +1,5 @@
 package com.celestechicken.appweb.model;
+
 import javax.validation.constraints.NotNull;
 
 import javax.persistence.Entity;

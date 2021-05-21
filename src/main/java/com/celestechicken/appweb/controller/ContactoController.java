@@ -11,10 +11,9 @@ import javax.validation.Valid;
 import com.celestechicken.appweb.model.Contacto;
 import com.celestechicken.appweb.repository.ContactoRepository;
 
-
 @Controller
-public class ContactoController {
-
+public class ContactoController{
+    
     private static final String INDEX ="contacto/create"; 
     private static String MODEL_CONTACT="contact";
     private final ContactoRepository contactsData;
@@ -23,13 +22,13 @@ public class ContactoController {
         this.contactsData = contactsData;
     }    
 
-@GetMapping("/contacto/create")
+    @GetMapping("/contacto/create")
     public String index(Model model) {
         model.addAttribute(MODEL_CONTACT, new Contacto());
         return INDEX;
     }  
-   
-@PostMapping("/contacto/create")
+    
+    @PostMapping("/contacto/create")
     public String createSubmitForm(Model model, 
         @Valid Contacto objContact, BindingResult result ){
         if(result.hasFieldErrors()) {
@@ -40,6 +39,7 @@ public class ContactoController {
             model.addAttribute("mensaje", "Se registro un contacto");
         }
         return INDEX;
-    }    
+    }
+
 
 }

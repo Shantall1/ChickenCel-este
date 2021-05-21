@@ -1,7 +1,5 @@
 package com.celestechicken.appweb.controller;
 
-
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,12 +14,28 @@ import javax.validation.Valid;
 
 @Controller
 public class ClienteController {
-
+    
     private static final String INDEX ="cliente/create"; 
     private static String MODEL_CONTACT="client";
     private final ClienteRepository clientsData;
     private final UsuarioRepository usuariosData;
 
+<<<<<<< HEAD
+    public ClienteController(ClienteRepository clientsData,
+        UsuarioRepository usuariosData    
+        ){
+        this.clientsData = clientsData;
+        this.usuariosData = usuariosData;
+    }      
+
+    @GetMapping("/cliente/create")
+    public String index(Model model) {
+        model.addAttribute(MODEL_CONTACT, new Cliente());
+        return INDEX;
+    }    
+
+    @PostMapping("/cliente/create")
+=======
 public ClienteController(ClienteRepository clientsData,
     UsuarioRepository usuariosData        ){
     this.clientsData = clientsData;
@@ -34,6 +48,7 @@ public String index(Model model) {
 }    
 
 @PostMapping("/cliente/create")
+>>>>>>> b9e03d7c35b0c206ef8f2534d277abb723eb58b9
     public String createSubmitForm(Model model, 
         @Valid Cliente objCliente, BindingResult result ){
         if(result.hasFieldErrors()) {
@@ -47,6 +62,5 @@ public String index(Model model) {
         }
         return INDEX;
     }
-
 
 }

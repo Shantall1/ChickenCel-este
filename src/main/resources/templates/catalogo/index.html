@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 
+<<<<<<< HEAD
+<html xmlns:th="https://www.thymeleaf.org" 
+    th:replace="~{fragments/layout :: layout (~{::body},'catalogo')}">
+=======
 <html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'catalogo')}">
+>>>>>>> b9e03d7c35b0c206ef8f2534d277abb723eb58b9
 
 <head>
   <title>Catalogo</title>
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
   <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css} " />
   <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<<<<<<< HEAD
+=======
   <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+>>>>>>> b9e03d7c35b0c206ef8f2534d277abb723eb58b9
   <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
   <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </head>
@@ -15,6 +23,24 @@
 <body>
 
   <div class="container">
+<<<<<<< HEAD
+    <div class="row">
+      <div class="col-lg-10 mt-5 mb-5">
+        <h2>Catalogo</h2><br/>
+        <table id="example" class="table table-bordered table-responsive" style="width: 100%">
+          <tbody>
+            <tr th:each="producto : ${productos}">
+              <td>
+                <img class="img-responsive" src="../static/resources/catalogo/${producto.imageFileName}"  th:src="@{'/resources/catalogo/'+${producto.imageFileName}}"/>
+                <p th:text="${producto.descripcion}" />
+                <p th:text="${producto.precio}" />
+                <a th:href="@{'/catalogo/add/__${producto.id}__'}"
+  			           class="btn btn-info" role="button">Add</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+=======
     <p th:text="${mensaje}" />
     <div class="row">
       <div class="col">
@@ -39,6 +65,7 @@
             </div>
           </div>
         </div>
+>>>>>>> b9e03d7c35b0c206ef8f2534d277abb723eb58b9
       </div>
     </div>
   </div>

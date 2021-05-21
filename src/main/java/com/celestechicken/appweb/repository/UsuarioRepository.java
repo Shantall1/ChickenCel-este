@@ -1,4 +1,5 @@
 package com.celestechicken.appweb.repository;
+
 import com.celestechicken.appweb.model.Usuario;
 
 import org.springframework.data.jpa.repository.JpaRepository;

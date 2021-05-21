@@ -25,7 +25,7 @@ public class UsuarioController {
         this.usuariosData = usuariosData;
     }      
 
-@GetMapping("/usuario/login")
+    @GetMapping("/usuario/login")
     public String login(Model model) {
         model.addAttribute(MODEL_CONTACT, new Usuario());
         return INDEX;
@@ -57,6 +57,9 @@ public class UsuarioController {
         }
         return page;
     }
+<<<<<<< HEAD
+}
+=======
     
     @GetMapping("/usuario/logout")
 	public String logoutSession(HttpServletRequest request) {
@@ -64,3 +67,4 @@ public class UsuarioController {
 		return "redirect:/";
 	}
 }
+>>>>>>> b9e03d7c35b0c206ef8f2534d277abb723eb58b9
