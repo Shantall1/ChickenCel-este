@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class UsuarioController {
     
@@ -57,14 +59,11 @@ public class UsuarioController {
         }
         return page;
     }
-<<<<<<< HEAD
-}
-=======
-    
+
     @GetMapping("/usuario/logout")
 	public String logoutSession(HttpServletRequest request) {
 		request.getSession().invalidate();
 		return "redirect:/";
 	}
 }
->>>>>>> b9e03d7c35b0c206ef8f2534d277abb723eb58b9
+
