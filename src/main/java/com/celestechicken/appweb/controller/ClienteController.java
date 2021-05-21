@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 
 import com.celestechicken.appweb.model.Cliente;
+import com.celestechicken.appweb.model.Usuario;
 import com.celestechicken.appweb.repository.ClienteRepository;
 import com.celestechicken.appweb.repository.UsuarioRepository;
 
@@ -20,7 +21,6 @@ public class ClienteController {
     private final ClienteRepository clientsData;
     private final UsuarioRepository usuariosData;
 
-<<<<<<< HEAD
     public ClienteController(ClienteRepository clientsData,
         UsuarioRepository usuariosData    
         ){
@@ -35,26 +35,14 @@ public class ClienteController {
     }    
 
     @PostMapping("/cliente/create")
-=======
-public ClienteController(ClienteRepository clientsData,
-    UsuarioRepository usuariosData        ){
-    this.clientsData = clientsData;
-    this.usuariosData = usuariosData;
-}          
-@GetMapping("/cliente/create")
-public String index(Model model) {
-    model.addAttribute(MODEL_CONTACT, new Cliente());
-    return INDEX;
-}    
-
-@PostMapping("/cliente/create")
->>>>>>> b9e03d7c35b0c206ef8f2534d277abb723eb58b9
     public String createSubmitForm(Model model, 
         @Valid Cliente objCliente, BindingResult result ){
         if(result.hasFieldErrors()) {
             model.addAttribute("mensaje", "No se registro un cliente");
         }else{
-            this.usuariosData.save(objCliente.getUser());
+            Usuario user = objCliente.getUser();
+            user.setTipoUsuario("C");
+            this.usuariosData.save(user);
             this.usuariosData.flush();
             this.clientsData.save(objCliente);
             model.addAttribute(MODEL_CONTACT, objCliente);

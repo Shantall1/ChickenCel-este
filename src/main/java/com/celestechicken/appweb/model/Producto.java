@@ -10,10 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-<<<<<<< HEAD
-=======
-
->>>>>>> b9e03d7c35b0c206ef8f2534d277abb723eb58b9
 
 import lombok.*;
 
