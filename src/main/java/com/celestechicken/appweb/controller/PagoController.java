@@ -35,7 +35,7 @@ public class PagoController {
     private final ProformaRepository proformaData;
     private final ClienteRepository clienteData;
     private final PagoRepository pagoData;
-    private final PedidoRepository pedidoDada;
+    private final PedidoRepository pedidoData;
     private final DetallePedidoRepository detallePedidoData;
     
 
