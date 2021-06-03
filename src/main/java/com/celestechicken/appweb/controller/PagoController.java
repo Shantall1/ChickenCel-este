@@ -29,7 +29,7 @@ import java.util.Date;
 
 @Controller
 public class PagoController {
-    
+
     private static final String VIEW_INDEX ="pago/create";
     private static String MODEL_VIEW="pago";
     private final ProformaRepository proformaData;
@@ -38,7 +38,6 @@ public class PagoController {
     private final PedidoRepository pedidoData;
     private final DetallePedidoRepository detallePedidoData;
     
-
     public PagoController(ProformaRepository proformaData,
         ClienteRepository clienteData,
         PagoRepository pagoData,
@@ -50,8 +49,9 @@ public class PagoController {
         this.pagoData = pagoData;
         this.pedidoData = pedidoData;
         this.detallePedidoData = detallePedidoData;
-    }
-
+    } 
+    
+    
     @GetMapping("/pago/create")
     public String index(Model model, HttpSession session){
         Usuario user = (Usuario)session.getAttribute("user"); 
@@ -74,8 +74,8 @@ public class PagoController {
             concat(cliente.getLastName()));
         model.addAttribute(MODEL_VIEW, pago);
         return VIEW_INDEX;
-    } 
-    
+    }   
+
     @PostMapping("/pago/create")
     public String createSubmitForm(Model model, HttpSession session,
         @Valid Pago objPago, BindingResult result ){
@@ -110,4 +110,3 @@ public class PagoController {
         return VIEW_INDEX;
     }
 }
-
