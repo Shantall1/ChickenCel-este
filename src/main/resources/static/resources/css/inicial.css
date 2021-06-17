@@ -1,0 +1,22 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.padre{
+    background-color: blanchedalmond;
+    padding-bottom: 20px;
+}
+
+.principal{
+    height: 100vh;
+}
+
+
+.pedido{
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+#direc::placeholder{
+    color: white;
+}
