@@ -1,60 +1,124 @@
 <!DOCTYPE html>
 
-<html xmlns:th="https://www.thymeleaf.org" 
-    th:replace="~{fragments/layout :: layout (~{::body},'login')}">
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'login')}">
+
+<style>
+  /* body{
+    height: 100vh
+  } */
+  .rounded {
+    -webkit-border-radius: 50px !important;
+    -moz-border-radius: 50px !important;
+    border-radius: 50px !important;
+  }
+</style>
 
 <body>
- 
-    <div class="container">
+<!-- <body class="m-0 vh-100 row justify-content-center align-items-center bg-warning"> -->
 
-        <div class="row">
-          <div class="col-sm-10 mt-5">
-            <div class="form-group row">
-              <h1>Login</h1>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-sm-10 mt-5">
+        <div class="form-group row">
+          <h1>Login</h1>
+        </div>
+        <form th:object="${user}" th:action="@{/usuario/login}" method="post">
+          <div class="form-group row">
+            <div class="col-sm-2">
+              <label for="userID">User</label>
             </div>
-            <form th:object="${user}" th:action="@{/usuario/login}" method="post">
-              <div class="form-group row">
-                <div class="col-sm-2">
-                  <label for="userID">User</label>
-                </div>
-                <div class="col-sm-2">
-                  <input type="text" th:field="*{userID}" />
-                </div>
+            <div class="col-sm-2">
+              <input type="text" th:field="*{userID}" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-2">
+              <label for="password">Password</label>
+            </div>
+            <div class="col-sm-2">
+              <input type="password" th:field="*{password}" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+              <button th:with="text='Login'" class="btn btn-primary" type="submit" th:text="${text}" />
+            </div>
+          </div>
+        </form>
+        <p th:text="${mensaje}" />
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="col-md-4 bg-light p-4">
+    <div class="container">
+      <div class="row">
+        <form>
+          <div class="form-group mb-3">
+            <label for="exampleInputEmail1">Nombre de Usuario</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input type="password" class="form-control">
+          </div>
+          <div class="form-group my-3">
+            <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" class="btn" style="background: #FF7171;">Iniciar Sesión</button>
+            <button type="submit" class="btn" style="background: #FF7171;">Registrate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="container">
+    <div class="row justify-content-center align-items-center mt-5">
+      <div class="col-md-4">
+        <div class="card border-0">
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" style="border-radius: 50px;">
               </div>
-              <div class="form-group row">
-                <div class="col-sm-2">
-                  <label for="password">Password</label>
-                </div>
-                <div class="col-sm-2">
-                  <input type="password" th:field="*{password}" />
-                </div>
-              </div>              
-              <div class="form-group row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-2">
-                  <button th:with="text='Login'" class="btn btn-primary" type="submit" th:text="${text}"/>
-                </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" style="border-radius: 50px;">
               </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <button type="submit" class="btn" style="background: #F45395; border-radius: 50px;">Submit</button>
             </form>
-            <p th:text="${mensaje}" />
           </div>
         </div>
       </div>
+    </div>
+  </div>
     
-      <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-      <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
-      <script th:src="@{/webjars/bootstrap-datepicker/js/bootstrap-datepicker.min.js}"></script>
-      <script th:src="@{/webjars/jquery.inputmask/jquery.inputmask.min.js}"></script>    
+
   
-      <script>
-        $('.input-group.date').datepicker({
-          autoclose: true,
-          todayHighlight: true
-        });
-      </script>
-      <script>
-        $(":input").inputmask();
-      </script>
+
+
+  <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+  <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+  <script th:src="@{/webjars/bootstrap-datepicker/js/bootstrap-datepicker.min.js}"></script>
+  <script th:src="@{/webjars/jquery.inputmask/jquery.inputmask.min.js}"></script>
+
+  <script>
+    $('.input-group.date').datepicker({
+      autoclose: true,
+      todayHighlight: true
+    });
+  </script>
+  <script>
+    $(":input").inputmask();
+  </script>
 </body>
 
 </html>

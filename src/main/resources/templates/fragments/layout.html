@@ -48,7 +48,7 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="searchName">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
-          <ul class="nav navbar-nav navbar-right">
+          <!-- <ul class="nav navbar-nav navbar-right">
             <th:block th:if="${session.user==null}">
               <li><a href="/cliente/create"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
               <li><a href="/usuario/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
@@ -56,11 +56,20 @@
             <th:block th:if="${session.user!=null}">
               <li><a href="/usuario/logout"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
             </th:block>                     
-          </ul>      
+          </ul>     -->
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <th:block th:if="${session.user==null}">
+              <li class="nav-item"><a class="nav-link" href="/cliente/create"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+              <li class="nav-item"><a class="nav-link" href="/usuario/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+            </th:block>
+            <th:block th:if="${session.user!=null}">
+              <li class="nav-item"><a class="nav-link" href="/usuario/logout"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+            </th:block>                     
+          </ul>  
         </div>
     </nav> 
     
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
       <div class="container xd-container">
   
         <th:block th:include="${template}" />
@@ -72,7 +81,35 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <th:block th:include="${template}" />
+
+    <footer class="text-center text-white fixed-bottom">
+      <div class="container p-2 pb-0">
+
+        <section class="mb-0">
+          <!-- Facebook -->
+          <a class="btn btn-outline-dark btn-floating btn-lg m-1" href="#!" role="button"
+            ><i class="fas fa-phone-alt"></i></a>
+          <!-- Twitter -->
+          <a class="btn btn-outline-dark btn-floating btn-lg m-1" href="#!" role="button"
+            ><i class="fab fa-facebook"></i></a>
+    
+          <!-- Google -->
+          <a class="btn btn-outline-dark btn-floating btn-lg m-1" href="#!" role="button"
+            ><i class="fab fa-youtube"></i></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center p-3" style="color: black;">
+        Copyright @ 2021 SoftTech - UTP
+      </div>
+      <!-- Copyright -->
+    </footer>
 
     <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
     <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
