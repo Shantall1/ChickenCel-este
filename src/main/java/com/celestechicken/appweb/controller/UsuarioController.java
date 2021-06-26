@@ -65,5 +65,33 @@ public class UsuarioController {
 		request.getSession().invalidate();
 		return "redirect:/";
 	}
+
+    @PostMapping("/usuario/register")
+    public String registerUsuario(Model model, 
+         @Valid Usuario objUser, 
+         HttpServletRequest request,
+         BindingResult result ){
+        String page=INDEX;
+        model.addAttribute(MODEL_CONTACT, new Usuario());
+        if(result.hasFieldErrors()) {
+            model.addAttribute(MODEL_MESSAGE, "No se ha podido loguear");
+        }else{
+            Optional<Usuario> userDB = this.usuariosData.findById(objUser.getUserID());
+            if(userDB.isPresent()){
+                if(userDB.get().getPassword().equals(objUser.getPassword())){
+                    model.addAttribute(MODEL_CONTACT,userDB.get());
+                    model.addAttribute(MODEL_MESSAGE, "Usuario existe");
+                    request.getSession().setAttribute("user", objUser);
+                    page="welcome";  
+                }else{
+                    model.addAttribute(MODEL_MESSAGE, "Password no coincide");  
+                }
+            }else{
+                model.addAttribute(MODEL_MESSAGE, "Usuario no existe");
+            }
+        }
+        return page;
+    }
+
 }
 
